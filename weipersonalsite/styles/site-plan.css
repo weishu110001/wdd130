@@ -40,6 +40,8 @@ body {
 img {
   display: block;
   margin: 0 auto;
+  height: 500px;
+  max-width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
@@ -137,6 +139,7 @@ nav a:hover {
     ". left left right right ."
     "page2 page2 . . page3 page3";
 }
+
 .sitemap > div {
 
   text-align: center;
