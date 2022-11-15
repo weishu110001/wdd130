@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <div class="logo">
+          <img
+            src="images/logo.png"
+            alt="logo"
+          />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rivers.html">Rivers</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <!-- top image-->
+        <div class="banner-box">
+          <img
+            class="banner"
+            src="images/hero.png"
+            alt="contactus-banner"
+          />
+        </div>
+        <hr />
+        <div class="contact-grid">
+          <h2 class="contact-title1">
+            Contact Us
+          </h2>
+          <img
+            class="contact-us-logo-img"
+            src="images/contactus.jpg"
+            alt="contact-us-logo-img"
+          />
+          <div>
+            <p class="contact-paragraph1">
+              Thank you for visiting Dry Oars website, if you have any questions or concerns, please
+              feel provide your contact information and leave us a message on the contact form. We 
+              apperciate you choosing Dra Oars today. 
+            </p>
+          </div>
+          <h2 class="contact-title2">
+            Let Us Know Your Thoughts or Questions
+          </h2>
+        </div>
+        <div id="feedback"></div>
+        <form action="/feedback-form" method="post">
+          <ul>
+            <li>
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="user_name" />
+            </li>
+            <li>
+              <label for="phone">Your Mobile Phone Number:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required
+              />
+              <small>Format: 801-123-4567</small>
+            </li>
+            <li>
+              <label for="mail">Your E-mail Address:</label>
+              <input type="email" id="mail" name="user_mail" />
+            </li>
+            <li>
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="usa">USA</option>
+                <option value="china">China</option>
+                <option value="jp">Japan</option>
+              </select>
+            </li>
+            <li>
+              <label for="msg">Your Message:</label>
+              <textarea id="msg" name="user_message"></textarea>
+            </li>
+            <li class="button">
+              <button type="submit">Submit Here</button>
+            </li>
+          </ul>
+        </form>
+        <script src="myScript.js"></script>
+      </main>
+      <footer>
+        <p>
+          &copy; 2022 Dry Oars - Wei Hsu - WDD 130-01
+          <a href="site-plan.html">Site-Plan</a>
+        </p>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/facebook.png" alt="fb icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/twitter.png " alt="twitter icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/instagram.png" alt="instagram icon">
+            </a>
+        </div>
+      </footer>
+    </div>
+    <script>
+        // get the feedback div element so we can do something with it.
+        const feedbackElement = document.getElementById('feedback');
+        // get the form so we can read what was entered in it.
+        const formElement = document.forms[0];
+        // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+        formElement.addEventListener('submit', function(e) {
+            // stop the form from doing the default action.
+            e.preventDefault();
+            // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+            feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+            // make the feedback element visible.
+            feedbackElement.style.display = "block";
+            // add a class to move everything down so our message doesn't cover it.
+            document.body.classList.toggle('moveDown');
+        });
+    </script>
+  </body>
+</html>
