@@ -12,10 +12,14 @@
     color: white;
     text-decoration: none;
     padding: 35px;
+    font-size: 35px;
+    margin-left: 40px;
+    line-height: 450%;
   }
   nav {
     display: flex;
     justify-content: space-around;
+    overflow: visible;
   }
   #hero-msg {
     grid-column: 2/3;
@@ -35,11 +39,6 @@
   }
   main section{
     text-align: center;
-  }
-  .invitation-card{
-    text-align: center;
-    margin: 0 auto;
-    grid-column: 1/11;
   }
   .invitation-card{
     text-align: center;
@@ -129,7 +128,8 @@
   }
   
   .logo{
-    width: 80px;
+    width: 200px;
+    margin-left: 60px;
   }
   
   #hero-img{
@@ -146,7 +146,14 @@
     grid-row: 1/3;
     z-index: -1;
   }
-  
+  .portrait-miyazaki{
+    grid-column: 2/6;
+    grid-row: 1/16;
+    width: 800px;
+    border: 10px solid #F1D302;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+  }
   .home-title {
     font-size: 2em;
     margin-top: 10px;
@@ -159,7 +166,9 @@
   margin-top: 50px;
   border-radius: 5px;
   }
-  
+  .quotes-movies{
+    grid-column: 7/10;
+  }
   .msg p{
     font-size: 0.8em;
     background-color: tan;
